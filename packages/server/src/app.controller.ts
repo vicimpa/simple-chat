@@ -1,13 +1,12 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get, UseGuards } from "@nestjs/common";
 
-import { AppService } from "./app.service";
+import { SessionGuard } from "./guard/session.guard";
 
+@UseGuards(SessionGuard)
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) { }
-
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async index() {
+    return 'Its work.';
   }
 }

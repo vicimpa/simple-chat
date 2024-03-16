@@ -1,0 +1,8 @@
+query Getuser {
+  getMe {
+    id
+    name
+    email
+    image
+  }
+}
