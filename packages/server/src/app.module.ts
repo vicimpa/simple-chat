@@ -3,7 +3,6 @@ import { PrismaModule } from "nestjs-prisma";
 import { Module } from "@nestjs/common";
 import { ScheduleModule } from "@nestjs/schedule";
 
-import { AppController } from "./app.controller";
 import { GraphQLModule } from "./graphql/graphql.module";
 import { SessionStrategy } from "./guard/session.strategy";
 
@@ -25,9 +24,7 @@ import { SessionStrategy } from "./guard/session.strategy";
     }),
     GraphQLModule,
   ],
-  controllers: [
-    AppController
-  ],
+  controllers: [],
   providers: [
     SessionStrategy
   ],
