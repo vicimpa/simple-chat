@@ -28,13 +28,15 @@
     "nestjs-prisma": "^0.23.0",
     "passport-custom": "^1.1.1",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "ts-morph": "^21.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
     "@types/cookie-parser": "^1.4.7",
     "@types/express": "^4.17.17",
     "@types/node": "^20.3.1",
+    "jest": "^29.7.0",
     "source-map-support": "^0.5.21",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"

@@ -24,9 +24,12 @@ client-install:
 	${CL} npm install
 
 client-dev:
-	${CL} npm run dev
+	${CL} npm run gql-watch | npm run dev
 
-client-build:
+client-gql:
+	${CL} npm run gql
+
+client-build: client-gql
 	${CL} npm run build
 
 client-prod:
@@ -43,7 +46,7 @@ server-build:
 	${SR} npm run build
 
 server-prod:
-	${SR} npm start:prod
+	${SR} npm run start:prod
 
 # Docker
 docker-up:

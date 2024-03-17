@@ -1,0 +1,19 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  updateMe(email: String, image: String, name: String): User
+}
+
+type Query {
+  getMe: User
+  getUserById(userId: String!): User
+}
+
+type User {
+  email: String
+  id: String!
+  image: String
+  name: String
+}

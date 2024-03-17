@@ -6,9 +6,11 @@
     "dev": "PORT=${NEXT_PORT} next dev",
     "build": "next build",
     "start": "PORT=${NEXT_PORT} next start",
-    "lint": "next lint"
+    "gql": "graphql-code-generator",
+    "gql-watch": "graphql-code-generator --watch"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.7",
     "@auth/prisma-adapter": "^1.5.0",
     "@prisma/client": "^5.11.0",
     "envalid": "^8.0.0",
@@ -18,6 +20,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@parcel/watcher": "^2.4.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -1,8 +1,16 @@
-query Getuser {
+query GetMe {
   getMe {
     id
     name
     email
+    image
+  }
+}
+
+query GetUserById($id: String!) {
+  getUserById(userId: $id) {
+    id
+    name
     image
   }
 }

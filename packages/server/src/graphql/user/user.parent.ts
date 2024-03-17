@@ -1,12 +1,8 @@
 import { ResolveField, Resolver } from "@nestjs/graphql";
 
-import { UserDTO } from "./models/UserDTO";
+import { UserDTO } from "./dto/UserDTO";
 
 @Resolver(() => UserDTO)
 export class UserParent {
 
-  @ResolveField(() => String)
-  async testField() {
-    return 'Hi';
-  }
 }

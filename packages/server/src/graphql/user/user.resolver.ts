@@ -2,9 +2,9 @@ import { PrismaService } from "nestjs-prisma";
 
 import { SessionGuard, CurrentUserId } from "@/guard/session.guard";
 import { UseGuards } from "@nestjs/common";
-import { Query, Resolver, Args } from "@nestjs/graphql";
+import { Query, Resolver, Args, Mutation } from "@nestjs/graphql";
 
-import { UserDTO } from "./models/UserDTO";
+import { UserDTO } from "./dto/UserDTO";
 
 @UseGuards(SessionGuard)
 @Resolver('User')
@@ -22,6 +22,30 @@ export class UserResolver {
 
     return this.prisma.user.findUnique({
       where: { id: userId }
+    });
+  }
+
+  @Mutation(() => UserDTO, { nullable: true })
+  async updateMe(
+    @CurrentUserId()
+    userId: string | null,
+    @Args('name', { type: () => String, nullable: true })
+    name: string | null,
+    @Args('email', { type: () => String, nullable: true })
+    email: string | null,
+    @Args('image', { type: () => String, nullable: true })
+    image: string | null,
+  ) {
+    if (!userId)
+      return null;
+
+    return this.prisma.user.update({
+      where: { id: userId },
+      data: {
+        name: name ?? undefined,
+        email: email ?? undefined,
+        image: image ?? undefined
+      }
     });
   }
 

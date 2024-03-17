@@ -1,17 +1,16 @@
 import { Field, ObjectType } from "@nestjs/graphql";
-import { User } from "@prisma/client";
 
-@ObjectType()
+@ObjectType('User')
 export class UserDTO {
   @Field(() => String)
   id: string;
 
-  @Field()
+  @Field({ nullable: true })
   name?: string;
 
-  @Field()
+  @Field({ nullable: true })
   email?: string;
 
-  @Field()
+  @Field({ nullable: true })
   image?: string;
 }
