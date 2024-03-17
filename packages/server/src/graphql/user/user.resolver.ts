@@ -29,11 +29,11 @@ export class UserResolver {
   async updateMe(
     @CurrentUserId()
     userId: string | null,
-    @Args('name', { type: () => String, nullable: true })
+    @Args('name', { nullable: true })
     name: string | null,
-    @Args('email', { type: () => String, nullable: true })
+    @Args('email', { nullable: true })
     email: string | null,
-    @Args('image', { type: () => String, nullable: true })
+    @Args('image', { nullable: true })
     image: string | null,
   ) {
     if (!userId)

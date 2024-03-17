@@ -1,16 +1,40 @@
-query GetMe {
+fragment BaseUser on User {
+  id
+  name
+  image
+}
+
+fragment FullUser on User {
+  ...BaseUser
+  email
+}
+
+query getMe {
   getMe {
-    id
-    name
-    email
-    image
+    ...FullUser
   }
 }
 
-query GetUserById($id: String!) {
+query getUserById($id: String!) {
   getUserById(userId: $id) {
-    id
-    name
-    image
+    ...BaseUser
+  }
+}
+
+mutation setName($name: String!) {
+  updateMe(name: $name) {
+    ...FullUser
+  }
+}
+
+mutation setEmail($email: String!) {
+  updateMe(email: $email) {
+    ...FullUser
+  }
+}
+
+mutation setImage($image: String!) {
+  updateMe(image: $image) {
+    ...FullUser
   }
 }
