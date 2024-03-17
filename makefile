@@ -39,6 +39,12 @@ server-install:
 server-dev:
 	${SR} npm run start:dev
 
+server-build:
+	${SR} npm run build
+
+server-prod:
+	${SR} npm start:prod
+
 # Docker
 docker-up:
 	docker compose up -d

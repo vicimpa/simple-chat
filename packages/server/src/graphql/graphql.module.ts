@@ -13,7 +13,7 @@ import { UserModule } from "./user/user.module";
       driver: ApolloDriver,
       playground: true,
       path: '/graphql',
-      autoSchemaFile: join(process.cwd(), '../../schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'schema.gql'),
       context: ({ req }): any => {
         return { req };
       },
