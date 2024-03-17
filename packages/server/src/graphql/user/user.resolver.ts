@@ -4,6 +4,7 @@ import { SessionGuard, CurrentUserId } from "@/guard/session.guard";
 import { UseGuards } from "@nestjs/common";
 import { Query, Resolver, Args, Mutation } from "@nestjs/graphql";
 
+import { UpdateUserDTO } from "./dto/UpdateUserDTO";
 import { UserDTO } from "./dto/UserDTO";
 
 @UseGuards(SessionGuard)
@@ -29,12 +30,8 @@ export class UserResolver {
   async updateMe(
     @CurrentUserId()
     userId: string | null,
-    @Args('name', { nullable: true })
-    name: string | null,
-    @Args('email', { nullable: true })
-    email: string | null,
-    @Args('image', { nullable: true })
-    image: string | null,
+    @Args('data')
+    { name, email, image }: UpdateUserDTO,
   ) {
     if (!userId)
       return null;

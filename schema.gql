@@ -3,12 +3,18 @@
 # ------------------------------------------------------
 
 type Mutation {
-  updateMe(email: String, image: String, name: String): User
+  updateMe(data: UpdateUserDTO!): User
 }
 
 type Query {
   getMe: User
   getUserById(userId: String!): User
+}
+
+input UpdateUserDTO {
+  email: String
+  image: String
+  name: String
 }
 
 type User {

@@ -22,19 +22,19 @@ query getUserById($id: String!) {
 }
 
 mutation setName($name: String!) {
-  updateMe(name: $name) {
+  updateMe(data: { name: $name }) {
     ...FullUser
   }
 }
 
 mutation setEmail($email: String!) {
-  updateMe(email: $email) {
+  updateMe(data: { email: $email }) {
     ...FullUser
   }
 }
 
 mutation setImage($image: String!) {
-  updateMe(image: $image) {
+  updateMe(data: { image: $image }) {
     ...FullUser
   }
 }
