@@ -3,8 +3,8 @@ const nextConfig = {
   distDir: './dist',
   rewrites: () => [
     {
-      source: '/graphql',
-      destination: 'http://localhost:5002/graphql'
+      source: process.env.NEST_GRAPHQL_PATH,
+      destination: process.env.NEST_GRAPHQL_URL
     }
   ],
 };

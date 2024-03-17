@@ -1,10 +1,12 @@
+import { env } from "./src/utils/env";
+
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
   // ...
   generates: {
     'src/graphql/gql.ts': {
-      schema: '../../schema.gql',
+      schema: env.NEST_GRAPHQL_SCHEMA,
       documents: 'src/graphql/schema/**/*.gql',
       plugins: [
         'typescript',

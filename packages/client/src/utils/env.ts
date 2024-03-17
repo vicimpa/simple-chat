@@ -5,4 +5,6 @@ export const env = cleanEnv(process.env, {
   // Auth
   NEXTAUTH_SECRET: str({ desc: 'Secret for auth' }),
   NEXTAUTH_URL: url({ desc: 'Next auth url' }),
+  // Graphql
+  NEST_GRAPHQL_SCHEMA: str({ desc: 'Schema path' }),
 });
